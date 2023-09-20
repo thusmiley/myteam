@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --container-w: 92%;
+  }
+  @screen sm {
+    :root {
+      --container-w: clamp(327px, 90%, 1110px);
+    }
+  }
+  @screen 2xl {
+    :root {
+      --container-w: clamp(900px, 85%, 1110px);
+    }
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+    font-family: "Livvic", sans-serif;
+    color: #fff;
+    @apply bg-midnightGreen;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+  a {
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  input,
+  textarea,
+  button,
+  select,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  .heading1, .heading2, .heading3, .heading4, .heading5, .heading6 {
+    font-weight: 700;
+  }
+  .heading1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .heading2 {
+    font-size: 32px;
+    line-height: 32px;
+  }
+  .heading3, .menu, .cta, .heading4 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .heading3 {
+    @apply text-lightCoral;
+  }
+  .heading4 {
+    @apply text-raptureBlue;
+  }
+  .paragraph {
+    font-size: 15px;
+    line-height: 28px;
+  }
+  .quotes {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .title {
+    font-size: 13px;
+    line-height: 18px;
+    font-style: italic;
+  }
+  @screen md {
+    .heading1 {
+      font-size: 64px;
+      line-height: 56px;
+    }
+  }
+  @screen xl {
+    .heading1 {
+      font-size: 100px;
+      line-height: 100px;
+    }
+    .heading2 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+    .paragraph {
+      font-size: 18px;
+    }
+  }
+}
+@layer components {
+  .cta {
+    padding: 10px 32px;
+    border-radius: 24px;
+    font-weight: 600;
+  }
+  .cta-white {
+    border: 2px solid white;
+  }
+  .cta-white:hover {
+    @apply bg-white text-darkGreen;
+  }
+  .cta-black {
+    border: 2px solid #012F34;
+    @apply text-sacramentoGreen;
+  }
+  .cta-black:hover {
+    @apply bg-darkGreen text-white;
+  }
+  .client-img {
+    width: 62px;
+    height: 62px;
+    border-radius: 100px;
+    border: 2px solid #C4FFFE;
+  }
+  .menu a:hover, .footer-menu a:hover {
+    @apply text-lightCoral;
+  }
+}
+@layer utilities {
+  .flexCenter {
+    @apply flex justify-center items-center;
+  }
+  .flexBetween {
+    @apply flex justify-between items-center;
+  }
+  .flexAround {
+    @apply flex justify-around items-center;
+  }
+  .flexStart {
+    @apply flex justify-start items-center;
+  }
+  .flexEnd {
+    @apply flex justify-end items-center;
+  }
+  .mobile-menu {
+    animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  @keyframes slide-left {
+    0% {
+      transform: translateX(100px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .mobile-menu-bg {
+    background: #014E56 url("/src/assets/bg-pattern-about-1-mobile-nav-1.svg") no-repeat bottom right -100px;
+  }
+  .home-hero-bg {
+    background: url("/src/assets/bg-pattern-home-2.svg") no-repeat bottom center;
+    background-size: contain;
+  }
+  @screen md {
+    .home-hero-bg {
+      background-size: 358px 100px;
+    }
+  }
+  @screen xl {
+    .home-hero-bg {
+      background: url("/src/assets/bg-pattern-home-1.svg") no-repeat left -100px top 30%, url("/src/assets/bg-pattern-home-2.svg") no-repeat bottom right 16%;
+      background-size: 200px 200px, 358px 100px;
+    }
+  }
+  .home-features-bg {
+    background: #012F34 url("/src/assets/bg-pattern-home-3.svg") no-repeat top right -100px;
+    background-size: 200px 244px;
+  }
+  @screen xl {
+    .home-features-bg {
+      background: #012F34 url("/src/assets/bg-pattern-home-3.svg") no-repeat bottom right -9%;
+      background-size: 200px 244px;
+    }
+  }
+  .quote-bg {
+    background: url("/src/assets/icon-quotes.svg") no-repeat top center;
+  }
+  .testimonials-bg {
+    background: url("/src/assets/bg-pattern-home-4-about-3.svg") no-repeat top left, url("/src/assets/bg-pattern-home-5.svg") no-repeat bottom right;
+  }
+  .cta-bg {
+    background: #F67E7E url("/src/assets/bg-pattern-home-6-about-5.svg") no-repeat bottom left;
+  }
+  .socials svg:hover path {
+    animation-duration: 300s;
+    @apply fill-lightCoral;
+  }
+}/*# sourceMappingURL=index.css.map */
