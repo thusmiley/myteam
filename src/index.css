@@ -65,6 +65,10 @@
   .heading4 {
     @apply text-raptureBlue;
   }
+  .heading5 {
+    font-size: 32px;
+    line-height: 48px;
+  }
   .paragraph {
     font-size: 15px;
     line-height: 28px;
@@ -117,6 +121,12 @@
   .cta-black:hover {
     @apply bg-darkGreen text-white;
   }
+  .cta-submit {
+    @apply text-darkGreen bg-white;
+  }
+  .cta-submit:hover {
+    @apply bg-raptureBlue;
+  }
   .client-img, .director-img {
     border-radius: 100px;
     border: 2px solid #C4FFFE;
@@ -131,6 +141,56 @@
   }
   .menu a:hover, .footer-menu a:hover {
     @apply text-lightCoral;
+  }
+  input, textarea {
+    background: transparent;
+    border-bottom: 1px solid white;
+    padding-bottom: 16px;
+    margin-bottom: 38px;
+    width: 100%;
+    outline: none;
+    -webkit-border-radius: 0;
+    padding-left: 14px;
+    caret: white;
+    @apply invalid:[&:not(:placeholder-shown):not(:focus)]:border-lightCoral;
+  }
+  textarea::-moz-placeholder, input::-moz-placeholder {
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: -0.12px;
+  }
+  input, textarea, textarea::placeholder, input::placeholder {
+    color: white;
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: -0.12px;
+  }
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    opacity: 0.6;
+    @apply invalid:[&:not(:placeholder-shown):not(:focus)]:text-lightCoral;
+  }
+  input::placeholder, textarea::placeholder {
+    opacity: 0.6;
+    @apply invalid:[&:not(:placeholder-shown):not(:focus)]:text-lightCoral;
+  }
+  input:focus, textarea:focus {
+    border-bottom: 1px solid #79C8C7;
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    -webkit-transition: background-color 5000000s ease-in-out 0s;
+    transition: background-color 5000000s ease-in-out 0s;
+    -webkit-text-fill-color: white;
+    background-clip: content-box !important;
+  }
+  .error {
+    @apply text-lightCoral text-left hidden;
+    font-style: italic;
+    margin: -35px 0 17px 14px;
+    font-size: 10px;
   }
 }
 @layer utilities {
@@ -251,6 +311,16 @@
   @screen md {
     .clients-bg {
       background-position: top left;
+    }
+  }
+  .contact-bg {
+    background: url("/src/assets/bg-pattern-contact-2.svg") no-repeat right -112.5px bottom -100px;
+    background-size: 200px 225px;
+  }
+  @screen md {
+    .contact-bg {
+      background: url("/src/assets/bg-pattern-about-2-contact-1.svg") no-repeat left -100px top, url("/src/assets/bg-pattern-contact-2.svg") no-repeat right -112.5px bottom;
+      background-size: 200px 200px, 200px 225px;
     }
   }
 }/*# sourceMappingURL=index.css.map */
