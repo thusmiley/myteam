@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="w-container mx-auto xl:flexBetween">
         <div className="md:flexBetween">
           <div className="">
-            <img src={logo} alt="logo" className="object-contain object-center w-full h-[32px]" />
+            <img src={logo} alt="logo" className="object-contain object-center w-full h-[32px] md:object-left" />
             <div className="space-x-6 quotes mt-6 footer-menu md:mt-10 md:text-left">
               <a href="/">home</a>
               <a href="/about">about</a>

@@ -10,17 +10,17 @@ const Contact = () => {
           <div className="xl:w-[50%] xl:mr-[30px]">
             <h1 className="heading1 mb-4 md:mb-6 xl:mb-4 xl:text-[64px]">Contact</h1>
             <h2 className="heading5 text-lightCoral mb-10 xl:mb-8">Ask us about</h2>
-            <div className="flex items-center space-x-[23px] md:ml-4 xl:ml-0">
+            <div className="flex items-center justify-start text-left space-x-[23px] md:ml-4 xl:ml-0">
               <img src={individuals} alt="Experienced Individuals" className="h-[72px] w-[72px] object-contain mb-4 md:mb-0" />
-              <p>The quality of our talent network</p>
+              <p className="menu font-normal">The quality of our talent network</p>
             </div>
-            <div className="flex items-center space-x-[23px] my-6 md:ml-4 xl:ml-0">
+            <div className="flex items-center space-x-[23px] my-6 md:ml-4 justify-start text-left  xl:ml-0">
               <img src={implement} alt="Easy to Implement" className="h-[72px] w-[72px] object-contain mb-4  md:mb-0" />
-              <p>Usage & implementation of our software</p>
+              <p className="menu font-normal">Usage & implementation of our software</p>
             </div>
-            <div className="flex items-center space-x-[23px] md:ml-4 xl:ml-0">
+            <div className="flex items-center space-x-[23px] justify-start text-left md:ml-4 xl:ml-0">
               <img src={productivity} alt="Enhanced Productivity" className="h-[72px] w-[72px] object-contain mb-4 md:mb-0" />
-              <p>How we help drive innovation</p>
+              <p className="menu font-normal">How we help drive innovation</p>
             </div>
           </div>
 

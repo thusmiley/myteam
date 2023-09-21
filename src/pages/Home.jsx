@@ -5,6 +5,7 @@ import line from "../assets/icon-line.svg";
 import kady from "../assets/avatar-kady.jpg";
 import aiysha from "../assets/avatar-aiysha.jpg";
 import arthur from "../assets/avatar-arthur.jpg";
+import CTA from "../components/CTA";
 
 const Home = () => {
   return (
@@ -102,6 +103,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <CTA />
     </div>
   );
 };

@@ -6,6 +6,7 @@ import guardian from "../assets/logo-the-guardian.png";
 import radar from "../assets/logo-tech-radar.png";
 import gadgets from "../assets/logo-gadgets-now.png";
 import line from "../assets/icon-line.svg";
+import CTA from "../components/CTA";
 
 const About = () => {
   return (
@@ -50,6 +51,8 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      <CTA />
     </div>
   );
 };
