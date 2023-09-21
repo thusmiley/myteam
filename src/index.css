@@ -117,11 +117,17 @@
   .cta-black:hover {
     @apply bg-darkGreen text-white;
   }
+  .client-img, .director-img {
+    border-radius: 100px;
+    border: 2px solid #C4FFFE;
+  }
   .client-img {
     width: 62px;
     height: 62px;
-    border-radius: 100px;
-    border: 2px solid #C4FFFE;
+  }
+  .director-img {
+    width: 96px;
+    height: 96px;
   }
   .menu a:hover, .footer-menu a:hover {
     @apply text-lightCoral;
@@ -143,6 +149,10 @@
   .flexEnd {
     @apply flex justify-end items-center;
   }
+  .socials svg:hover path {
+    animation-duration: 300s;
+    @apply fill-lightCoral;
+  }
   .mobile-menu {
     animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
@@ -152,6 +162,25 @@
     }
     100% {
       transform: translateX(0);
+    }
+  }
+  .rotate45 {
+    animation: rotate45 300ms ease;
+  }
+  @keyframes rotate45 {
+    100% {
+      transform: rotate(45deg);
+    }
+  }
+  .fadein {
+    animation: fadein 500ms ease-in-out;
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
     }
   }
   .mobile-menu-bg {
@@ -178,8 +207,7 @@
   }
   @screen xl {
     .home-features-bg {
-      background: #012F34 url("/src/assets/bg-pattern-home-3.svg") no-repeat bottom right -9%;
-      background-size: 200px 244px;
+      background: #012F34 url("/src/assets/bg-pattern-home-3.svg") no-repeat bottom right -100px;
     }
   }
   .quote-bg {
@@ -191,8 +219,44 @@
   .cta-bg {
     background: #F67E7E url("/src/assets/bg-pattern-home-6-about-5.svg") no-repeat bottom left;
   }
-  .socials svg:hover path {
-    animation-duration: 300s;
-    @apply fill-lightCoral;
+  .about-hero-bg {
+    background: url("/src/assets/bg-pattern-about-1-mobile-nav-1.svg") no-repeat bottom -100px right -100px;
+    background-size: 200px 200px;
+  }
+  @screen md {
+    .about-hero-bg {
+      background-position: bottom right -100px;
+    }
+  }
+  @screen xl {
+    .about-hero-bg {
+      background: url("/src/assets/bg-pattern-home-1.svg") no-repeat left -100px top 30%, url("/src/assets/bg-pattern-home-2.svg") no-repeat bottom right 16%;
+      background-size: 200px 200px, 358px 100px;
+    }
+  }
+  .about-directors-bg {
+    background-image: url("/src/assets/bg-pattern-about-2-contact-1.svg"), url("/src/assets/bg-pattern-home-4-about-3.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position: top -100px left -100px, right bottom;
+    background-size: 200px 200px, 147px 100px;
+  }
+  @screen md {
+    .about-directors-bg {
+      background-position: top left -100px, right bottom;
+    }
+  }
+  @screen xl {
+    .about-directors-bg {
+      background: #012F34 url("/src/assets/bg-pattern-home-3.svg") no-repeat bottom right -100px;
+    }
+  }
+  .clients-bg {
+    background: #012F34 url("/src/assets/bg-pattern-about-4.svg") no-repeat top -100px left -100px;
+    background-size: 200px 200px;
+  }
+  @screen md {
+    .clients-bg {
+      background-position: top -100px left;
+    }
   }
 }/*# sourceMappingURL=index.css.map */
