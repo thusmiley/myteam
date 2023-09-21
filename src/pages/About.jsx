@@ -42,11 +42,11 @@ const About = () => {
         <div className="w-container mx-auto text-center">
           <h2 className="heading2 mb-[64px]">Some of our clients</h2>
           <div className="space-y-[64px] md:space-y-0 md:flex md:flex-wrap md:gap-[50px] md:justify-center xl:justify-between">
-            <img src={verge} alt="the verge" className="h-6 w-auto object-contain object-center md:object-left" />
-            <img src={jakarta} alt="the jakarta post" className="h-5 w-auto object-contain object-center md:object-left" />
-            <img src={guardian} alt="the guardian" className="h-6 w-auto object-contain object-center md:object-left" />
-            <img src={radar} alt="tech radar" className="h-6 w-auto object-contain object-center md:object-left" />
-            <img src={gadgets} alt="gadgets now" className="h-7 w-auto object-contain object-center  md:object-left" />
+            <img src={verge} alt="the verge" className="h-6 w-full object-contain object-center md:object-left md:w-auto" />
+            <img src={jakarta} alt="the jakarta post" className="h-5 w-full object-contain object-center md:object-left md:w-auto" />
+            <img src={guardian} alt="the guardian" className="h-6 w-full object-contain object-center md:object-left md:w-auto" />
+            <img src={radar} alt="tech radar" className="h-6 w-full object-contain object-center md:object-left md:w-auto" />
+            <img src={gadgets} alt="gadgets now" className="h-7 w-full object-contain object-center  md:object-left md:w-auto" />
           </div>
         </div>
       </section>
