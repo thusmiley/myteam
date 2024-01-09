@@ -15,6 +15,8 @@ Designo website
 
 ![](./public/preview.jpg)
 
+![](./public/preview-devjob.jpg)
+
 ### Links
 
 - Git URL: https://github.com/thusmiley/myteam.git
@@ -22,10 +24,12 @@ Designo website
 
 ### Built with
 
-- Semantic HTML5 markup
 - SASS
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - Tailwind
 - React (Vite)
+- Search, filter, API
+- React Router
+- React Hook Form

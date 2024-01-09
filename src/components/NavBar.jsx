@@ -16,6 +16,7 @@ const NavBar = () => {
         <div className="hidden md:flex items-center justify-between w-full">
           <div className="space-x-10 menu">
             <a href="/">home</a>
+            <a href="/jobs">jobs</a>
             <a href="/about">about</a>
           </div>
           <a href="/contact" className="cta cta-white">

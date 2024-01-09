@@ -139,7 +139,7 @@
     .menu a:hover, .footer-menu a:hover
         @apply text-lightCoral
 
-    // form components
+    // contact form components
     input, textarea
         background: transparent
         border-bottom: 1px solid white
@@ -172,6 +172,12 @@
         transition: background-color 5000000s ease-in-out 0s
         -webkit-text-fill-color: white
         background-clip: content-box !important
+
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration 
+        display: none
 
     .error
         @apply text-lightCoral text-left hidden
