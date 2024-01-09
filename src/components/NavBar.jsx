@@ -35,9 +35,15 @@ const NavBar = () => {
           {/* nav  */}
           <div className={`${!toggle ? "hidden" : "flex"} absolute top-0 bottom-0 right-0 bg-policeBlue h-screen w-[65%] mobile-menu-bg`}>
             <div className="flex-col mobile-menu pl-12 pt-[112px] relative w-full">
-              <img src={close} alt="close" onClick={() => setToggle(!toggle)} className="cursor-pointer w-full h-[16.26px] object-contain object-right absolute top-[56px] right-[8%]" />
+              <img
+                src={close}
+                alt="close"
+                onClick={() => setToggle(!toggle)}
+                className="cursor-pointer w-full h-[16.26px] object-contain object-right absolute top-[56px] right-[8%]"
+              />
               <div className="flex flex-col space-y-6 menu mb-[45px]">
                 <a href="/">home</a>
+                <a href="/jobs">jobs</a>
                 <a href="/about">about</a>
               </div>
               <a href="/contact" className="cta  cta-white">
