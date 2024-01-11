@@ -4,7 +4,6 @@ import data from "../utils/data.json";
 import JobCard from "../components/jobs/JobCard";
 
 const Jobs = () => {
-  const [expandFilter, setExpandFilter] = useState(false);
   const [loadMore, setLoadMore] = useState(9);
   const [titleInput, setTitleInput] = useState("");
   const [locationInput, setLocationInput] = useState("");
@@ -40,8 +39,6 @@ const Jobs = () => {
   return (
     <main className="relative w-container min-h-screen mx-auto pt-[160px] text-center md:pt-5 pb-[108px] md:pb-[112px] xl:pb-[120px] ">
       <Search
-        expandFilter={expandFilter}
-        setExpandFilter={setExpandFilter}
         titleInput={titleInput}
         locationInput={locationInput}
         fulltimeInput={fulltimeInput}
