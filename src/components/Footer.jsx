@@ -2,7 +2,7 @@ import logo from "../assets/logo.svg";
 
 const Footer = () => {
   return (
-    <footer className="bg-darkGreen py-[65px] text-center md:py-[56px]">
+    <footer className="bg-darkGreen py-[65px] text-center font-semibold md:py-[56px]">
       <div className="w-container mx-auto xl:flexBetween">
         <div className="md:flexBetween">
           <div className="">

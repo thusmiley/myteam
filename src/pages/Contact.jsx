@@ -1,8 +1,19 @@
 import individuals from "../assets/icon-person.svg";
 import implement from "../assets/icon-cog.svg";
 import productivity from "../assets/icon-chart.svg";
+import { useForm } from "react-hook-form";
+import { useState, useEffect } from "react";
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+
   return (
     <main className="min-h-screen">
       <section className="pt-[160px] md:pt-[64px] contact-bg pb-[130px] md:pb-[150px] xl:pt-0 xl:mt-[70px] xl:pb-[120px]">
@@ -25,33 +36,83 @@ const Contact = () => {
           </div>
 
           {/* contact form  */}
-          <form className="relative group mt-[56px] xl:w-[50%] xl:mt-0" noValidate>
-            <label htmlFor="name">
-              <input type="text" name="name" id="name" placeholder="Name" required className="peer" pattern=".{3,}" />
-              <span className="error peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">Please enter a name longer than 3 characters</span>
-            </label>
-            <label htmlFor="email">
-              <input type="email" name="email" id="email" placeholder="Email Address" required className="peer" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" />
-              <span className="error peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">This field is invalid</span>
-            </label>
+          <form className="relative group mt-[56px] xl:w-[50%] xl:mt-0" onSubmit={handleSubmit(onSubmit)}>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Name"
+                className={`${errors.name ? "border-b-lightCoral placeholder:text-lightCoral" : ""}`}
+                {...register("name", {
+                  required: "Required",
+                  pattern: {
+                    value: /[a-zA-Z]/,
+                    message: "Invalid",
+                  },
+                })}
+              />
+              {errors.name && <p className="error">{errors.name.message}</p>}
+            </div>
+            <div className="relative">
+              <input
+                type="email"
+                placeholder="Email Address"
+                className={`${errors.email ? "border-b-lightCoral placeholder:text-lightCoral" : ""}`}
+                {...register("email", {
+                  required: "Required",
+                  pattern: {
+                    value: /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/,
+                    message: "Invalid",
+                  },
+                })}
+              />
+              {errors.email && <p className="error">{errors.email.message}</p>}
+            </div>
 
-            <label htmlFor="company">
-              <input type="text" name="company" id="company" placeholder="Company Name" />
-            </label>
-            <label htmlFor="title">
-              <input type="text" name="title" id="title" placeholder="Title" />
-            </label>
-            <label htmlFor="message">
-              <textarea name="message" id="message" cols="30" rows="4" placeholder="Message" className="peer" required></textarea>
-              <span className="error peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">This field is required</span>
-            </label>
-            <input
-              type="submit"
-              name="submit"
-              id="submit"
-              value="submit"
-              className="cta cta-submit border-none cursor-pointer w-[123px] float-left group-invalid:pointer-events-none group-invalid:opacity-25"
-            />
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Company Name"
+                className={`${errors.company ? "border-b-lightCoral placeholder:text-lightCoral" : ""}`}
+                {...register("company", {
+                  pattern: {
+                    value: /[a-zA-Z]/,
+                    message: "Invalid",
+                  },
+                })}
+              />
+              {errors.company && <p className="error">{errors.company.message}</p>}
+            </div>
+            <div className="relative">
+              <input
+                type="text"
+                placeholder="Title"
+                className={`${errors.title ? "border-b-lightCoral placeholder:text-lightCoral" : ""}`}
+                {...register("title", {
+                  pattern: {
+                    value: /[a-zA-Z]/,
+                    message: "Invalid",
+                  },
+                })}
+              />
+              {errors.title && <p className="error">{errors.title.message}</p>}
+            </div>
+            <div className="relative">
+              <textarea
+                cols="30"
+                rows="4"
+                placeholder="Message"
+                className={`${errors.message ? "border-b-lightCoral placeholder:text-lightCoral" : ""}`}
+                {...register("message", {
+                  required: "Required",
+                  pattern: {
+                    minLength: 20,
+                    message: "Please enter more than 20 characters.",
+                  },
+                })}
+              ></textarea>
+              {errors.message && <p className="error">{errors.message.message}</p>}
+            </div>
+            <button type="submit" className="cta cta-submit border-none cursor-pointer w-[123px] float-left " >submit</button>
           </form>
         </div>
       </section>

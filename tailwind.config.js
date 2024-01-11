@@ -11,6 +11,7 @@ export default {
         deepJungleGreen: "#004047",
         sacramentoGreen: "#012F34",
         darkGreen: "#002529",
+        textColorJobs: "#6E8098",
       },
       backgroundImage: {
         webMobile: "url('/src/assets/home/mobile/image-web-design.jpg')",

@@ -143,36 +143,21 @@
     @apply text-lightCoral;
   }
   input, textarea {
-    background: transparent;
     border-bottom: 1px solid white;
-    padding-bottom: 16px;
-    margin-bottom: 38px;
-    width: 100%;
-    outline: none;
     -webkit-border-radius: 0;
-    padding-left: 14px;
-    caret: white;
-    @apply invalid:[&:not(:placeholder-shown):not(:focus)]:border-lightCoral;
+    @apply caret-white pl-[14px] w-full outline-none mb-[38px] pb-4 bg-transparent;
   }
   textarea::-moz-placeholder, input::-moz-placeholder {
-    color: white;
-    font-size: 15px;
-    line-height: 25px;
-    letter-spacing: -0.12px;
+    @apply font-semibold text-white text-[15px] leading-[25px] tracking-[-.12px];
   }
   input, textarea, textarea::placeholder, input::placeholder {
-    color: white;
-    font-size: 15px;
-    line-height: 25px;
-    letter-spacing: -0.12px;
+    @apply font-semibold text-white text-[15px] leading-[25px] tracking-[-.12px];
   }
   input::-moz-placeholder, textarea::-moz-placeholder {
-    opacity: 0.6;
-    @apply invalid:[&:not(:placeholder-shown):not(:focus)]:text-lightCoral;
+    @apply font-semibold opacity-60;
   }
   input::placeholder, textarea::placeholder {
-    opacity: 0.6;
-    @apply invalid:[&:not(:placeholder-shown):not(:focus)]:text-lightCoral;
+    @apply font-semibold opacity-60;
   }
   input:focus, textarea:focus {
     border-bottom: 1px solid #79C8C7;
@@ -200,10 +185,7 @@
     display: none;
   }
   .error {
-    @apply text-lightCoral text-left hidden;
-    font-style: italic;
-    margin: -35px 0 17px 14px;
-    font-size: 10px;
+    @apply text-lightCoral text-left italic text-[10px] absolute bottom-[16px] left-[14px] font-semibold;
   }
 }
 @layer utilities {

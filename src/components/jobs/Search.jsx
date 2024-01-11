@@ -5,14 +5,14 @@ import searchIconCoral from "../../assets/desktop/icon-search-coral.svg";
 import { useState, useEffect } from "react";
 
 const Search = ({ expandFilter, setExpandFilter, isMobile, titleInput, locationInput, fulltimeInput, setTitleInput, setLocationInput, setFulltimeInput }) => {
-  
+
   const handleSubmit = (e) => {
     event.preventDefault();
     setExpandFilter(!expandFilter);
   };
 
   return (
-    <div className="bg-white rounded-[6px] mb-[57px] text-left md:mb-[70px] xl:mb-[105px]">
+    <div className="bg-white rounded-[6px] mb-[57px] text-left md:mb-[70px] xl:mb-[105px] font-semibold">
       <form action="" onSubmit={handleSubmit} className="job-form flex justify-between items-center relative p-4 xl:px-8">
         <div className="flex justify-start items-center">
           {!isMobile && <img src={searchIconCoral} alt="" className="w-6 h-auto object-contain object-center" />}
