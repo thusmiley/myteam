@@ -5,27 +5,14 @@ import JobCard from "../components/jobs/JobCard";
 
 const Jobs = () => {
   const [expandFilter, setExpandFilter] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
   const [loadMore, setLoadMore] = useState(9);
   const [titleInput, setTitleInput] = useState("");
   const [locationInput, setLocationInput] = useState("");
   const [fulltimeInput, setFulltimeInput] = useState(false);
 
-  const handleResize = () => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
   const handleLoadMore = () => {
     setLoadMore(loadMore + 3);
   };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-  });
 
   const filterJobs = data
     .filter((job) => {
@@ -55,7 +42,6 @@ const Jobs = () => {
       <Search
         expandFilter={expandFilter}
         setExpandFilter={setExpandFilter}
-        isMobile={isMobile}
         titleInput={titleInput}
         locationInput={locationInput}
         fulltimeInput={fulltimeInput}

@@ -171,6 +171,9 @@
     -webkit-text-fill-color: white;
     background-clip: content-box !important;
   }
+  .job-form input[type=search] {
+    @apply pl-4 pb-0 mb-0 bg-white text-[16px] leading-[20px] text-policeBlue placeholder:text-[16px] placeholder:text-midnightGreen outline-none border-[1px] rounded-[5px] caret-policeBlue border-none focus:border-none;
+  }
   .job-form input:-webkit-autofill,
   .job-form input:-webkit-autofill:hover,
   .job-form input:-webkit-autofill:focus,
