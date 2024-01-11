@@ -38,6 +38,7 @@ const Search = ({ titleInput, locationInput, fulltimeInput, setTitleInput, setLo
           <div className="hidden md:block absolute w-[1px] h-[82px] bg-sacramentoGreen/20 left-0" />
           <input
             type="checkbox"
+            id="fulltime"
             name="fulltime"
             className="appearance-none shrink-0 peer border-none outline-none bg-white w-6 h-6 rounded-[3px] pb-0 mb-0 hover:bg-lightCoral transition-colors duration-200 ease-in-out cursor-pointer checked:bg-lightCoral checked:border-0 focus:border-none md:bg-sacramentoGreen/20 "
             onChange={() => setFulltimeInput(!fulltimeInput)}
