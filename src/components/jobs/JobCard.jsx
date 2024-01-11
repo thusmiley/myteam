@@ -8,7 +8,7 @@ const JobCard = ({ job }) => {
         {job.contract}
       </p>
       <h2 className="font-bold text-[20px] my-3 text-policeBlue cursor-pointer transition-colors duration-200 ease-in-out truncate hover:text-sacramentoGreen">
-        <a href="/">{job.position}</a>
+        <a href={`/jobs/${job.id}`}>{job.position}</a>
       </h2>
       <h3 className="text-[16px]">{job.company}</h3>
       <h4 className="mt-10 text-lightCoral text-[14px]">{job.location}</h4>

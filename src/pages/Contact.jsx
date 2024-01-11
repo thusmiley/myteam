@@ -4,7 +4,7 @@ import productivity from "../assets/icon-chart.svg";
 
 const Contact = () => {
   return (
-    <div>
+    <main className="min-h-screen">
       <section className="pt-[160px] md:pt-[64px] contact-bg pb-[130px] md:pb-[150px] xl:pt-0 xl:mt-[70px] xl:pb-[120px]">
         <div className="w-container mx-auto text-center md:max-w-[542px] xl:flex xl:text-left xl:max-w-full">
           <div className="xl:w-[50%] xl:mr-[30px]">
@@ -55,7 +55,7 @@ const Contact = () => {
           </form>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

@@ -10,9 +10,9 @@ import CTA from "../components/CTA";
 
 const About = () => {
   return (
-    <div>
+    <main className="min-h-screen">
       {/* hero */}
-      <section className="pt-[160px] md:pt-[64px] about-hero-bg pb-[108px] md:pb-[112px] xl:pb-[120px]">
+      <section className="pt-[160px]  md:pt-[64px] about-hero-bg pb-[108px] md:pb-[112px] xl:pb-[120px]">
         <div className="w-container mx-auto text-center xl:flex xl:text-left ">
           <h1 className="heading1 mb-[18px] md:mb-6 xl:mb-0 xl:w-[30%]">About</h1>
           <div className="xl:ml-[150px]">
@@ -53,7 +53,7 @@ const About = () => {
       </section>
 
       <CTA />
-    </div>
+    </main>
   );
 };
 

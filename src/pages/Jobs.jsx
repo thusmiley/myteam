@@ -6,6 +6,10 @@ import JobCard from "../components/jobs/JobCard";
 const Jobs = () => {
   const [expandFilter, setExpandFilter] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [loadMore, setLoadMore] = useState(9);
+  const [titleInput, setTitleInput] = useState("");
+  const [locationInput, setLocationInput] = useState("");
+  const [fulltimeInput, setFulltimeInput] = useState(false);
 
   const handleResize = () => {
     if (window.innerWidth < 768) {
@@ -15,21 +19,64 @@ const Jobs = () => {
     }
   };
 
+  const handleLoadMore = () => {
+    setLoadMore(loadMore + 3);
+  };
+
   useEffect(() => {
     window.addEventListener("resize", handleResize);
   });
 
-  return (
-    <main className="relative w-container mx-auto pt-[160px] text-center md:pt-[64px] pb-[108px] md:pb-[112px] xl:pb-[120px] ">
-      <Search expandFilter={expandFilter} setExpandFilter={setExpandFilter} isMobile={isMobile} />
+  const filterJobs = data
+    .filter((job) => {
+      if (titleInput === "") {
+        return job;
+      } else {
+        return job.position.toLowerCase().includes(titleInput);
+      }
+    })
+    .filter((job) => {
+      if (locationInput === "") {
+        return job;
+      } else {
+        return job.location.toLowerCase().includes(locationInput);
+      }
+    })
+    .filter((job) => {
+      if (fulltimeInput === false) {
+        return job;
+      } else {
+        return job.contract.includes("Full Time");
+      }
+    });
 
-      <section className="space-y-[50px] md:grid md:grid-cols-2 md:space-y-0 md:gap-x-[11px] md:gap-y-[65px]">
-        {data.map((job) => (
+  return (
+    <main className="relative w-container min-h-screen mx-auto pt-[160px] text-center md:pt-5 pb-[108px] md:pb-[112px] xl:pb-[120px] ">
+      <Search
+        expandFilter={expandFilter}
+        setExpandFilter={setExpandFilter}
+        isMobile={isMobile}
+        titleInput={titleInput}
+        locationInput={locationInput}
+        fulltimeInput={fulltimeInput}
+        setTitleInput={setTitleInput}
+        setLocationInput={setLocationInput}
+        setFulltimeInput={setFulltimeInput}
+      />
+
+      <section className="space-y-[50px] md:grid md:grid-cols-2 md:space-y-0 md:gap-x-[11px] md:gap-y-[65px] xl:grid-cols-3 xl:gap-x-[30px]">
+        {filterJobs?.slice(0, loadMore).map((job) => (
           <JobCard key={job.id} job={job} />
         ))}
       </section>
 
-      <button className="cta cta-white mt-8 transition-colors duration-200 ease-in-out md:mt-[56px]">load more</button>
+      {filterJobs.length === 0 ? (
+        <p>Sorry, there are no matching jobs.</p>
+      ) : (
+        <button className="cta cta-white mt-8 transition-colors duration-200 ease-in-out md:mt-[56px]" onClick={handleLoadMore}>
+          load more
+        </button>
+      )}
     </main>
   );
 };
