@@ -10,7 +10,7 @@ const NavBar = () => {
     <header className="fixed top-0 z-10 w-full py-[48px] font-semibold md:py-[64px] md:static bg-midnightGreen">
       <nav className="w-container mx-auto flex justify-between items-center space-x-12 ">
         <a href="/" className="">
-          <img src={logo} alt="logo" className="object-contain object-left w-full h-[32px] xl:h-10" />
+          <img src={logo} alt="logo" className="object-contain object-left w-[128px] h-auto xl:w-[160px]" />
         </a>
         {/* desktop and tablet */}
         <div className="hidden md:flex items-center justify-between w-full">
