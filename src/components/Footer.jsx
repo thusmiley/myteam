@@ -1,17 +1,40 @@
 import logo from "../assets/logo.svg";
 
 const Footer = () => {
+  const pathname = window.location.pathname;
+
   return (
     <footer className="bg-darkGreen py-[65px] text-center font-semibold md:py-[56px]">
       <div className="w-container mx-auto xl:flexBetween">
         <div className="md:flexBetween">
           <div className="">
-            <img src={logo} alt="logo" className="object-contain object-center w-full h-[32px] md:object-left" />
+            <img
+              src={logo}
+              alt="logo"
+              className="object-contain object-center w-full h-[32px] md:object-left"
+            />
             <div className="space-x-6 quotes mt-6 footer-menu md:mt-10 md:text-left">
-              <a href="/">home</a>
-              <a href="/jobs">jobs</a>
-              <a href="/about">about</a>
-              <a href="/contact">contact</a>
+              <a href="/" className={pathname == "/" ? "text-lightCoral" : ""}>
+                home
+              </a>
+              <a
+                href="/jobs"
+                className={pathname == "/jobs" ? "text-lightCoral" : ""}
+              >
+                jobs
+              </a>
+              <a
+                href="/about"
+                className={pathname == "/about" ? "text-lightCoral" : ""}
+              >
+                about
+              </a>
+              <a
+                href="/contact"
+                className={pathname == "/contact" ? "text-lightCoral" : ""}
+              >
+                contact
+              </a>
             </div>
           </div>
 
@@ -53,7 +76,9 @@ const Footer = () => {
               </svg>
             </a>
           </div>
-          <p className="text-white/60 quotes mt-4 md:mt-0">Copyright 2020. All Rights Reserved</p>
+          <p className="text-white/60 quotes mt-4 md:mt-0">
+            Copyright 2020. All Rights Reserved
+          </p>
         </div>
       </div>
     </footer>

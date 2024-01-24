@@ -53,10 +53,13 @@ const Jobs = () => {
         ))}
       </section>
 
-      {filterJobs.length === 0 ? (
-        <p>Sorry, there are no matching jobs.</p>
-      ) : (
-        <button className="cta cta-white mt-8 transition-colors duration-200 ease-in-out md:mt-[56px]" onClick={handleLoadMore}>
+      {filterJobs.length === 0 && <p>Sorry, there are no matching jobs.</p>}
+
+      {filterJobs.length > 9 && (
+        <button
+          className="cta cta-white mt-8 transition-colors duration-200 ease-in-out md:mt-[56px]"
+          onClick={handleLoadMore}
+        >
           load more
         </button>
       )}
