@@ -99,11 +99,31 @@ const NavBar = () => {
                 className="cursor-pointer w-full h-[16.26px] object-contain object-right absolute top-[56px] right-[8%]"
               />
               <div className="flex flex-col space-y-6 menu mb-[45px]">
-                <a href="/">home</a>
-                <a href="/jobs">jobs</a>
-                <a href="/about">about</a>
+                <a
+                  href="/"
+                  className={pathname == "/" ? "text-lightCoral" : ""}
+                >
+                  home
+                </a>
+                <a
+                  href="/jobs"
+                  className={pathname == "/jobs" ? "text-lightCoral" : ""}
+                >
+                  jobs
+                </a>
+                <a
+                  href="/about"
+                  className={pathname == "/about" ? "text-lightCoral" : ""}
+                >
+                  about
+                </a>
               </div>
-              <a href="/contact" className="cta  cta-white">
+              <a
+                href="/contact"
+                className={`${
+                  pathname == "/contact" ? "text-lightCoral" : ""
+                } cta cta-white`}
+              >
                 contact us
               </a>
             </div>

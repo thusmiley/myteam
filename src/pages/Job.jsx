@@ -5,7 +5,7 @@ const Job = ({ params }) => {
   const { jobId } = useParams();
 
   return (
-    <main className="relative w-container min-h-screen mx-auto pt-[160px] text-center text-[16px] text-textColorJobs md:pt-0 pb-[108px] md:pb-[112px] xl:pb-[120px] md:max-w-[730px]">
+    <main className="relative w-container min-h-screen mx-auto pt-[185px] text-center text-[16px] text-textColorJobs md:pt-0 pb-[108px] md:pb-[112px] xl:pb-[120px] md:max-w-[730px]">
       <section className="bg-white rounded-[6px] relative md:flex md:justify-between md:items-center md:py-5 md:px-10">
         <div className="md:flex md:justify-start md:items-center">
           <img
